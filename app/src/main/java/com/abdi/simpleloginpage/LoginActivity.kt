@@ -23,11 +23,15 @@ class LoginActivity : AppCompatActivity() {
             val userpass = binding.txtPassword
 
             if (username.text.toString().equals("admin") && userpass.text.toString().equals("admin")) {
-                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                startActivity(Intent(applicationContext, MainActivity::class.java))
                 finish()
             } else {
-                Toast.makeText(applicationContext, "user or password incorrect!!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "user or password incorrect!!", Toast.LENGTH_LONG).show()
             }
+        }
+
+        binding.signupTxt.setOnClickListener {
+            startActivity(Intent(applicationContext, SingupActivity::class.java))
         }
 
     }
